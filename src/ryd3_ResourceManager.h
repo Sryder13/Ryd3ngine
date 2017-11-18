@@ -6,6 +6,10 @@ class Resource {
 		Resource();
 		virtual ~Resource();
 		virtual bool load(const std::string &fileName);
+
+		std::string getFilename() {return this->filename;}
+	private:
+		std::string filename;
 };
 
 // Singleton, a game will only ever need one of these, and will want to access
