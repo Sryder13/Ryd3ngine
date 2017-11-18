@@ -8,6 +8,7 @@ class Resource {
 		virtual bool load(const std::string &fileName);
 
 		std::string getFilename() {return this->filename;}
+		void setFilename(const std::string &filename) {this->filename = filename;}
 	private:
 		std::string filename;
 };
