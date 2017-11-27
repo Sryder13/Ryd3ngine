@@ -8,7 +8,8 @@ include_directories(${CMAKE_SOURCE_DIR}/libs)
 
 # Create a list of all the files to use
 set(SOURCE_FILES	src/ryd3_core.cpp
-			src/ryd3_ResourceManager.cpp)
+			src/ryd3_ResourceManager.cpp
+			src/ryd3_texture.cpp)
 
 # Place the output in lib
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
