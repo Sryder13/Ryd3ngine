@@ -3,15 +3,17 @@
 #include "GL/glew.h"
 
 #include "ryd3_camera.h"
+#include "ryd3_entity.h"
 
-class Entity;
 class Music;
 
 class Ryd3Core {
 public:
 	Ryd3Core();
 	virtual ~Ryd3Core();
-	bool setupWindowandContext();
+	bool setupWindow();
+	bool setupContext();
+	bool initialiseImage();
 	void swapWindow();
 	void addEntity(Entity entity);
 	void drawEntities();
