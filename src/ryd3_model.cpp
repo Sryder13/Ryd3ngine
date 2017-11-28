@@ -13,6 +13,7 @@ Model::~Model() {
 	glDeleteBuffers(1, &uvBuffer);
 	glDeleteBuffers(1, &normalBuffer);
 	glDeleteBuffers(1, &indicesBuffer);
+	glDeleteVertexArrays(1, &vaoId);
 }
 
 bool Model::load(const std::string &filename) {
