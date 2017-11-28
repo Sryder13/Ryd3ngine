@@ -6,7 +6,6 @@
 #include "glm/vec2.hpp"
 #include "glm/vec3.hpp"
 #include "glm/vec4.hpp"
-#include "glm/fwd.hpp"
 #include "GL/glew.h"
 
 #include "ryd3_ResourceManager.h"
@@ -18,7 +17,7 @@ class Model : public Resource {
 		Model();
 		virtual ~Model();
 		virtual bool load(const std::string &filename);
-		void drawModel(glm::vec3 position, glm::vec3 scale, glm::quat rotation);
+		void drawModel();
 	private:
 		void setupArrayObject();
 

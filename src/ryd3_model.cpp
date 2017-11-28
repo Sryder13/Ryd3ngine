@@ -88,7 +88,7 @@ void Model::setupArrayObject() {
 		&indices[0], GL_STATIC_DRAW);
 }
 
-void Model::drawModel(glm::vec3 position, glm::vec3 scale, glm::quat rotation) {
+void Model::drawModel() {
 	glActiveTexture(GL_TEXTURE0);
 	texture->bindTexture();
 
