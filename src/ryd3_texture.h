@@ -6,7 +6,7 @@
 
 #include "ryd3_ResourceManager.h"
 
-class Texture : Resource {
+class Texture : public Resource {
 	public:
 		Texture();
 		virtual ~Texture();

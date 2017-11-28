@@ -6,7 +6,7 @@
 
 #include "ryd3_ResourceManager.h"
 
-class Music : Resource {
+class Music : public Resource {
 	public:
 		Music();
 		virtual ~Music();

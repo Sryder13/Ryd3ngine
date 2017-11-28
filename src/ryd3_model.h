@@ -13,7 +13,7 @@
 
 class Texture;
 
-class Model : Resource {
+class Model : public Resource {
 	public:
 		Model();
 		virtual ~Model();

@@ -6,7 +6,7 @@
 
 #include "ryd3_ResourceManager.h"
 
-class Sound : Resource {
+class Sound : public Resource {
 	public:
 		Sound();
 		virtual ~Sound();
