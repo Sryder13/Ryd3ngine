@@ -1,3 +1,6 @@
+#ifndef RYD3_MUSIC_H
+#define RYD3_MUSIC_H
+
 #include <iostream>
 #include "SDL2/SDL_mixer.h"
 
@@ -12,3 +15,5 @@ class Music : Resource {
 	private:
 		Mix_Music *data;
 };
+
+#endif

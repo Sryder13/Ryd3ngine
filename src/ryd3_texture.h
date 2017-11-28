@@ -1,3 +1,6 @@
+#ifndef RYD3_TEXTURE_H
+#define RYD3_TEXTURE_H
+
 #include <iostream>
 #include "GL/glew.h"
 
@@ -12,3 +15,5 @@ class Texture : Resource {
 	private:
 		GLuint textureId;
 };
+
+#endif

@@ -1,3 +1,6 @@
+#ifndef RYD3_RESOURCEMANAGER_H
+#define RYD3_RESOURCEMANAGER_H
+
 #include <iostream>
 #include <map>
 
@@ -43,3 +46,5 @@ class ResourceManager {
 
 		std::map <std::string, Resource *> resourceList;
 };
+
+#endif

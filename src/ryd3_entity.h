@@ -1,3 +1,6 @@
+#ifndef RYD3_ENTITY_H
+#define RYD3_ENTITY_H
+
 #include <iostream>
 #include "glm/vec3.hpp"
 #include "glm/gtc/quaternion.hpp"
@@ -25,3 +28,5 @@ class Entity {
 		glm::quat rotation;
 		Model *model;
 };
+
+#endif

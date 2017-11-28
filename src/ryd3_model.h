@@ -1,3 +1,6 @@
+#ifndef RYD3_MODEL_H
+#define RYD3_MODEL_H
+
 #include <iostream>
 #include <vector>
 #include "glm/vec2.hpp"
@@ -10,13 +13,6 @@
 
 class Texture;
 
-struct model_vertex {
-	glm::vec3 position;
-	glm::vec3 normal;
-	glm::vec4 colour;
-	glm::vec2 texCoord;
-};
-
 class Model : Resource {
 	public:
 		Model();
@@ -24,7 +20,18 @@ class Model : Resource {
 		virtual bool load(const std::string &filename);
 		void drawModel(glm::vec3 position, glm::vec3 scale, glm::quat rotation);
 	private:
-		GLuint vboId;
-		std::vector<model_vertex> vertices;
-		Texture *texture;
+		void setupArrayObject();
+
+		GLuint vaoId;
+		GLuint vertexBuffer;
+		GLuint uvBuffer;
+		GLuint normalBuffer;
+		GLuint indicesBuffer;
+		std::vector<glm::vec3> vertices;
+		std::vector<glm::vec2> uvs;
+		std::vector<glm::vec3> normals;
+		std::vector<unsigned short> indices;
+		Texture * texture;
 };
+
+#endif

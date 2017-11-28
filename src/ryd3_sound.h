@@ -1,3 +1,6 @@
+#ifndef RYD3_SOUND_H
+#define RYD3_SOUND_H
+
 #include <iostream>
 #include "SDL2/SDL_mixer.h"
 
@@ -12,3 +15,5 @@ class Sound : Resource {
 	private:
 		Mix_Chunk *data;
 };
+
+#endif

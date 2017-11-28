@@ -1,13 +1,15 @@
+#ifndef RYD3_CAMERA_H
+#define RYD3_CAMERA_H
+
 #include <iostream>
 #include "glm/vec3.hpp"
 #include "glm/gtc/quaternion.hpp"
 
 class Camera {
 	public:
-		Camera();
+		Camera() : Camera(glm::vec3(0.0), glm::quat(1.0, 0.0, 0.0, 0.0), 90.0f) {};
+		Camera(glm::vec3 position, glm::quat rotation, float fieldOfView);
 		virtual ~Camera();
-		void updateProjectionMatrix();
-		void updateModelViewMatrix();
 
 		glm::vec3 getPosition() {return this->position;};
 		void setPosition(glm::vec3 newPosition) {this->position = newPosition;};
@@ -20,3 +22,5 @@ class Camera {
 		glm::quat rotation;
 		float fieldOfView;
 };
+
+#endif

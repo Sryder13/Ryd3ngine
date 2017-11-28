@@ -1,3 +1,6 @@
+#ifndef RYD3_CORE_H
+#define RYD3_CORE_H
+
 #include <vector>
 #include "SDL2/SDL.h"
 #include "GL/glew.h"
@@ -32,3 +35,5 @@ private:
 	Music *curMusic;
 	Camera camera;
 };
+
+#endif
