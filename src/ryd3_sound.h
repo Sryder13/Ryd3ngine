@@ -11,7 +11,7 @@ class Sound : public Resource {
 		Sound();
 		virtual ~Sound();
 		bool load(const std::string &filename);
-		void playSound();
+		bool playSound();
 	private:
 		Mix_Chunk *data;
 };

@@ -11,7 +11,7 @@ class Music : public Resource {
 		Music();
 		virtual ~Music();
 		bool load(const std::string &filename);
-		void playMusic();
+		bool playMusic(int loops);
 	private:
 		Mix_Music *data;
 };
