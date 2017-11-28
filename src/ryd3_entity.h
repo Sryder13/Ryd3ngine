@@ -5,14 +5,19 @@
 #include "glm/vec3.hpp"
 #include "glm/gtc/quaternion.hpp"
 
+#include <GL/glew.h>
+
 class Model;
+class Camera;
 
 class Entity {
 	public:
-		Entity();
+		Entity() : Entity(glm::vec3(0.0), glm::vec3(1.0), glm::quat(0.0, 0.0, 0.0, 0.0)) {};
+		Entity(glm::vec3 position, glm::vec3 scale, glm::quat rotation);
 		virtual ~Entity();
-		void drawEntity();
-		void update();
+		void drawEntity(glm::mat4 viewMatrix, glm::mat4 projectionMatrix,
+			GLuint shaderProgram);
+		virtual void update();
 
 		Model getModel();
 		bool setModel(Model &model);
