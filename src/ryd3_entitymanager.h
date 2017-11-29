@@ -4,7 +4,7 @@
 #include <iostream>
 #include <list>
 
-#include "GL/glew.h"
+#include <GL/glew.h>
 
 class Entity;
 class Camera;
