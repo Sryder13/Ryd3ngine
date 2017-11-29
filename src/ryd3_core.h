@@ -6,6 +6,7 @@
 #include "GL/glew.h"
 
 #include "ryd3_camera.h"
+#include "ryd3_entitymanager.h"
 #include "ryd3_entity.h"
 
 class Music;
@@ -34,6 +35,7 @@ private:
 	unsigned int windowHeight;
 	Music *curMusic;
 	Camera camera;
+	Ryd3_EntityManager entityManager;
 
 	bool setupWindow();
 	bool setupContext();
