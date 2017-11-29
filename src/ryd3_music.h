@@ -6,6 +6,8 @@
 
 #include "ryd3_ResourceManager.h"
 
+namespace Ryd3 {
+
 class Music : public Resource {
 	public:
 		Music();
@@ -15,5 +17,7 @@ class Music : public Resource {
 	private:
 		Mix_Music *data;
 };
+
+}
 
 #endif

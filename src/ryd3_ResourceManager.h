@@ -4,6 +4,8 @@
 #include <iostream>
 #include <map>
 
+namespace Ryd3 {
+
 class Resource {
 	public:
 		Resource();
@@ -46,5 +48,7 @@ class ResourceManager {
 
 		std::map <std::string, Resource *> resourceList;
 };
+
+}
 
 #endif

@@ -5,6 +5,8 @@
 
 #include "glm/gtc/matrix_transform.hpp"
 
+namespace Ryd3 {
+
 Entity::Entity(glm::vec3 position, glm::vec3 scale, glm::quat rotation) {
 	this->position = position;
 	this->scale = scale;
@@ -29,4 +31,6 @@ void Entity::drawEntity(glm::mat4 viewMatrix, glm::mat4 projectionMatrix,
 
 		model->drawModel();
 	}
+}
+
 }

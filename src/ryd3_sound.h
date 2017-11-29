@@ -6,6 +6,8 @@
 
 #include "ryd3_ResourceManager.h"
 
+namespace Ryd3 {
+
 class Sound : public Resource {
 	public:
 		Sound();
@@ -15,5 +17,7 @@ class Sound : public Resource {
 	private:
 		Mix_Chunk *data;
 };
+
+}
 
 #endif

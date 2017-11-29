@@ -1,5 +1,7 @@
 #include "ryd3_music.h"
 
+namespace Ryd3 {
+
 Music::~Music() {
 	Mix_FreeMusic(data);
 }
@@ -19,4 +21,6 @@ bool Music::playMusic(int loops) {
 		return false;
 	}
 	return true;
+}
+
 }

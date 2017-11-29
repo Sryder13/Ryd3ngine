@@ -7,6 +7,8 @@
 
 #include <GL/glew.h>
 
+namespace Ryd3 {
+
 class Model;
 class Camera;
 
@@ -33,5 +35,7 @@ class Entity {
 		glm::quat rotation;
 		Model *model;
 };
+
+}
 
 #endif

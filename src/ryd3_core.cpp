@@ -11,6 +11,8 @@
 #include "ryd3_music.h"
 #include "ryd3_sound.h"
 
+namespace Ryd3 {
+
 Ryd3Core::Ryd3Core(unsigned int windowWidth, unsigned int windowHeight) {
 	mainWindow = NULL;
 	glContext = NULL;
@@ -137,4 +139,6 @@ bool Ryd3Core::initialiseMixer(unsigned int numChannels) {
 
 void Ryd3Core::swapWindow() {
 	SDL_GL_SwapWindow(mainWindow);
+}
+
 }

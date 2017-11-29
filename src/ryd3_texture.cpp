@@ -1,6 +1,8 @@
 #include "ryd3_texture.h"
 #include "SDL2/SDL_image.h"
 
+namespace Ryd3 {
+
 Texture::Texture() {
 	// nothing needed right now
 }
@@ -56,4 +58,6 @@ bool Texture::load(const std::string &filename) {
 
 Texture::~Texture() {
 	glDeleteTextures(1, &textureId);
+}
+
 }

@@ -10,6 +10,8 @@
 
 #include "ryd3_ResourceManager.h"
 
+namespace Ryd3 {
+
 class Texture;
 
 class Model : public Resource {
@@ -32,5 +34,7 @@ class Model : public Resource {
 		std::vector<unsigned short> indices;
 		Texture * texture;
 };
+
+}
 
 #endif

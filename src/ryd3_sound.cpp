@@ -1,5 +1,7 @@
 #include "ryd3_sound.h"
 
+namespace Ryd3 {
+
 Sound::~Sound() {
 	Mix_FreeChunk(data);
 }
@@ -21,4 +23,6 @@ bool Sound::playSound() {
 		return false;
 	}
 	return true;
+}
+
 }

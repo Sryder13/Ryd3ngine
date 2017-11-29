@@ -5,6 +5,8 @@
 #include "glm/vec3.hpp"
 #include "glm/fwd.hpp"
 
+namespace Ryd3 {
+
 class Camera {
 	public:
 		Camera() : Camera(glm::vec3(0.0, 0.0, 1.0), glm::vec3(0.0), 90.0f, 640,
@@ -31,5 +33,7 @@ class Camera {
 		float nZPlane;
 		float fZPlane;
 };
+
+}
 
 #endif

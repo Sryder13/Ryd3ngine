@@ -5,11 +5,13 @@
 #include "ryd3_entity.h"
 #include "ryd3_camera.h"
 
-void Ryd3_EntityManager::addEntity(Entity *entity) {
+namespace Ryd3 {
+
+void EntityManager::addEntity(Entity *entity) {
 	entityList.push_back(entity);
 }
 
-void Ryd3_EntityManager::removeEntity(Entity *entity) {
+void EntityManager::removeEntity(Entity *entity) {
 	std::list<Entity *>::iterator it;
 	it = std::find(entityList.begin(), entityList.end(), entity);
 	if (it != entityList.end()) {
@@ -20,16 +22,18 @@ void Ryd3_EntityManager::removeEntity(Entity *entity) {
 	}
 }
 
-void Ryd3_EntityManager::drawEntities(Camera &camera, GLuint shaderProgram) {
+void EntityManager::drawEntities(Camera &camera, GLuint shaderProgram) {
 	for (std::list<Entity *>::iterator it = entityList.begin(); it != entityList.end(); it++) {
 		(*it)->drawEntity(camera.getViewMatrix(),
 			camera.getProjectionMatrix(), shaderProgram);
 	}
 }
 
-void Ryd3_EntityManager::clearEntities() {
+void EntityManager::clearEntities() {
 	for (std::list<Entity *>::iterator it = entityList.begin(); it != entityList.end(); it++) {
 		delete (*it);
 	}
 	entityList.clear();
+}
+
 }

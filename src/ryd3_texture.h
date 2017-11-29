@@ -6,6 +6,8 @@
 
 #include "ryd3_ResourceManager.h"
 
+namespace Ryd3 {
+
 class Texture : public Resource {
 	public:
 		Texture();
@@ -15,5 +17,7 @@ class Texture : public Resource {
 	private:
 		GLuint textureId;
 };
+
+}
 
 #endif

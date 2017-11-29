@@ -2,6 +2,8 @@
 
 #include "glm/gtc/matrix_transform.hpp"
 
+namespace Ryd3 {
+
 Camera::Camera(glm::vec3 position, glm::vec3 lookAt, float fieldOfView,
 	unsigned int viewportWidth, unsigned int viewportHeight, float nZPlane,
 	float fZPlane) {
@@ -25,4 +27,6 @@ glm::mat4 Camera::getViewMatrix() {
 glm::mat4 Camera::getProjectionMatrix() {
 	return glm::perspective(glm::radians(fieldOfView),
 		(float)viewportWidth / viewportHeight, nZPlane, fZPlane);
+}
+
 }

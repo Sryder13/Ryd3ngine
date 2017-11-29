@@ -6,13 +6,15 @@
 
 #include <GL/glew.h>
 
+namespace Ryd3 {
+
 class Entity;
 class Camera;
 
-class Ryd3_EntityManager {
+class EntityManager {
 	public:
-		Ryd3_EntityManager();
-		virtual ~Ryd3_EntityManager();
+		EntityManager();
+		virtual ~EntityManager();
 		void addEntity(Entity *entity);
 		void removeEntity(Entity *entity);
 		void drawEntities(Camera &camera, GLuint shaderProgram);
@@ -20,5 +22,7 @@ class Ryd3_EntityManager {
 	private:
 		std::list<Entity *> entityList;
 };
+
+}
 
 #endif

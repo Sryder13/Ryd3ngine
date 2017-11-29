@@ -9,6 +9,8 @@
 #include "ryd3_entitymanager.h"
 #include "ryd3_entity.h"
 
+namespace Ryd3 {
+
 class Music;
 
 class Ryd3Core {
@@ -35,12 +37,14 @@ private:
 	unsigned int windowHeight;
 	Music *curMusic;
 	Camera camera;
-	Ryd3_EntityManager entityManager;
+	EntityManager entityManager;
 
 	bool setupWindow();
 	bool setupContext();
 	bool initialiseImage();
 	bool initialiseMixer(unsigned int numChannels);
 };
+
+}
 
 #endif
