@@ -1,7 +1,7 @@
 #ifndef RYD3_CORE_H
 #define RYD3_CORE_H
 
-#include <vector>
+#include <list>
 #include "SDL2/SDL.h"
 #include "GL/glew.h"
 
@@ -12,16 +12,16 @@ class Music;
 
 class Ryd3Core {
 public:
-	Ryd3Core();
+	Ryd3Core(unsigned int windowWidth, unsigned int windowHeight,
+		float nZPlane, float fZPlane);
 	virtual ~Ryd3Core();
-	bool setupWindow();
-	bool setupContext();
-	bool initialiseImage();
+	bool initialise(unsigned int numSoundChannels);
 	void swapWindow();
-	void addEntity(Entity entity);
+	void addEntity(Entity *entity);
+	void removeEntity(Entity *entity);
 	void drawEntities();
 	Camera &getCamera() {return this->camera;};
-	void playMusic(const std::string &filename);
+	void playMusic(const std::string &filename, int loops);
 	void stopMusic();
 	bool playSound(const std::string &filename);
 	void clearColourBuffer() {glClear(GL_COLOR_BUFFER_BIT);}
@@ -31,9 +31,18 @@ public:
 private:
 	SDL_Window *mainWindow;
 	SDL_GLContext glContext;
-	std::vector<Entity> entityList;
+	unsigned int windowWidth;
+	unsigned int windowHeight;
+	float nZPlane;
+	float fZPlane;
+	std::list<Entity *> entityList;
 	Music *curMusic;
 	Camera camera;
+
+	bool setupWindow();
+	bool setupContext();
+	bool initialiseImage();
+	bool initialiseMixer(unsigned int numChannels);
 };
 
 #endif
