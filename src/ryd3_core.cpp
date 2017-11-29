@@ -1,7 +1,6 @@
 #include "ryd3_core.h"
 
 #include <iostream>
-#include <algorithm>
 
 #include "GL/glew.h"
 #include "SDL2/SDL_opengl.h"
@@ -12,14 +11,11 @@
 #include "ryd3_music.h"
 #include "ryd3_sound.h"
 
-Ryd3Core::Ryd3Core(unsigned int windowWidth, unsigned int windowHeight,
-	float nZPlane, float fZPlane) {
+Ryd3Core::Ryd3Core(unsigned int windowWidth, unsigned int windowHeight) {
 	mainWindow = NULL;
 	glContext = NULL;
 	this->windowWidth = windowWidth;
 	this->windowHeight = windowHeight;
-	this->nZPlane = nZPlane;
-	this->fZPlane = fZPlane;
 }
 
 Ryd3Core::~Ryd3Core() {
@@ -53,29 +49,6 @@ bool Ryd3Core::initialise(unsigned int numSoundChannels) {
 		return false;
 	}
 	return true;
-}
-
-void Ryd3Core::addEntity(Entity *entity) {
-	entityList.push_back(entity);
-}
-
-void Ryd3Core::removeEntity(Entity *entity) {
-	std::list<Entity *>::iterator it;
-	it = std::find(entityList.begin(), entityList.end(), entity);
-	if (it != entityList.end()) {
-		entityList.erase(it);
-		delete entity;
-	} else {
-		std::cout << "Entity was not in the entity list!" << std::endl;
-	}
-}
-
-void Ryd3Core::drawEntities() {
-	for (std::list<Entity *>::iterator it = entityList.begin(); it != entityList.end(); it++) {
-		(*it)->drawEntity(camera.getViewMatrix(),
-			camera.getProjectionMatrix(windowWidth, windowHeight, nZPlane,
-			fZPlane), 0); // TODO: Shader program!!!
-	}
 }
 
 void Ryd3Core::playMusic(const std::string &filename, int loops) {

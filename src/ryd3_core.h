@@ -12,8 +12,7 @@ class Music;
 
 class Ryd3Core {
 public:
-	Ryd3Core(unsigned int windowWidth, unsigned int windowHeight,
-		float nZPlane, float fZPlane);
+	Ryd3Core(unsigned int windowWidth, unsigned int windowHeight);
 	virtual ~Ryd3Core();
 	bool initialise(unsigned int numSoundChannels);
 	void swapWindow();
@@ -33,9 +32,6 @@ private:
 	SDL_GLContext glContext;
 	unsigned int windowWidth;
 	unsigned int windowHeight;
-	float nZPlane;
-	float fZPlane;
-	std::list<Entity *> entityList;
 	Music *curMusic;
 	Camera camera;
 
