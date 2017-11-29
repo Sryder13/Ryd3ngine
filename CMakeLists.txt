@@ -13,6 +13,7 @@ set(SOURCE_FILES	src/ryd3_core.cpp
 			src/ryd3_model.cpp
 			src/ryd3_camera.cpp
 			src/ryd3_entity.cpp
+			src/ryd3_entitymanager.cpp
 			src/ryd3_sound.cpp
 			src/ryd3_music.cpp)
 

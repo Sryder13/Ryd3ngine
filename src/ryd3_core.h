@@ -26,7 +26,7 @@ public:
 	void clearColourBuffer() {glClear(GL_COLOR_BUFFER_BIT);}
 	void clearDepthBuffer() {glClear(GL_DEPTH_BUFFER_BIT);}
 
-	void getCurMusic();
+	Music *getCurMusic() {return this->curMusic;};
 private:
 	SDL_Window *mainWindow;
 	SDL_GLContext glContext;
