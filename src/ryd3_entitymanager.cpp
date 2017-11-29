@@ -20,10 +20,10 @@ void Ryd3_EntityManager::removeEntity(Entity *entity) {
 	}
 }
 
-void Ryd3_EntityManager::drawEntities(Camera &camera) {
+void Ryd3_EntityManager::drawEntities(Camera &camera, GLuint shaderProgram) {
 	for (std::list<Entity *>::iterator it = entityList.begin(); it != entityList.end(); it++) {
 		(*it)->drawEntity(camera.getViewMatrix(),
-			camera.getProjectionMatrix(), 0); // TODO: Shader program!!!
+			camera.getProjectionMatrix(), shaderProgram);
 	}
 }
 
