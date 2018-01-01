@@ -13,14 +13,14 @@
 
 namespace Ryd3 {
 
-Ryd3Core::Ryd3Core(unsigned int windowWidth, unsigned int windowHeight) {
+Core::Core(unsigned int windowWidth, unsigned int windowHeight) {
 	mainWindow = NULL;
 	glContext = NULL;
 	this->windowWidth = windowWidth;
 	this->windowHeight = windowHeight;
 }
 
-Ryd3Core::~Ryd3Core() {
+Core::~Core() {
 	Mix_Quit();
 	IMG_Quit();
 	SDL_GL_DeleteContext(glContext);
@@ -28,7 +28,7 @@ Ryd3Core::~Ryd3Core() {
 	SDL_Quit();
 }
 
-bool Ryd3Core::initialise(unsigned int numSoundChannels) {
+bool Core::initialise(unsigned int numSoundChannels) {
 	setupWindow();
 	if (!setupContext()) {
 		SDL_DestroyWindow(mainWindow);
@@ -53,21 +53,21 @@ bool Ryd3Core::initialise(unsigned int numSoundChannels) {
 	return true;
 }
 
-void Ryd3Core::playMusic(const std::string &filename, int loops) {
+void Core::playMusic(const std::string &filename, int loops) {
 	curMusic = ResourceManager::getResourceManager()->getResource<Music>(filename);
 	curMusic->playMusic(loops);
 }
 
-void Ryd3Core::stopMusic() {
+void Core::stopMusic() {
 	Mix_HaltMusic();
 	curMusic = NULL;
 }
 
-bool Ryd3Core::playSound(const std::string &filename) {
+bool Core::playSound(const std::string &filename) {
 	return ResourceManager::getResourceManager()->getResource<Sound>(filename)->playSound();
 }
 
-bool Ryd3Core::setupWindow() {
+bool Core::setupWindow() {
 	if (SDL_Init(SDL_INIT_VIDEO) < 0) {
 		std::cerr << "SDL could not be initialised! SDL Error: "
 			<< SDL_GetError() << std::endl;
@@ -86,7 +86,7 @@ bool Ryd3Core::setupWindow() {
 	return true;
 }
 
-bool Ryd3Core::setupContext() {
+bool Core::setupContext() {
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 2);
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 1);
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
@@ -121,7 +121,7 @@ bool Ryd3Core::setupContext() {
 	return true;
 }
 
-bool Ryd3Core::initialiseImage() {
+bool Core::initialiseImage() {
 	if (!IMG_Init(IMG_INIT_PNG)) {
 		std::cerr << "SDL Image could not be initialised! SDL Error: "
 			<< SDL_GetError() << std::endl;
@@ -130,14 +130,14 @@ bool Ryd3Core::initialiseImage() {
 	return true;
 }
 
-bool Ryd3Core::initialiseMixer(unsigned int numChannels) {
+bool Core::initialiseMixer(unsigned int numChannels) {
 	if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, numChannels, 4096) == -1) {
 		return false;
 	}
 	return true;
 }
 
-void Ryd3Core::swapWindow() {
+void Core::swapWindow() {
 	SDL_GL_SwapWindow(mainWindow);
 }
 

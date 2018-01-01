@@ -13,10 +13,10 @@ namespace Ryd3 {
 
 class Music;
 
-class Ryd3Core {
+class Core {
 public:
-	Ryd3Core(unsigned int windowWidth, unsigned int windowHeight);
-	virtual ~Ryd3Core();
+	Core(unsigned int windowWidth, unsigned int windowHeight);
+	virtual ~Core();
 	bool initialise(unsigned int numSoundChannels);
 	void swapWindow();
 	void addEntity(Entity *entity);
