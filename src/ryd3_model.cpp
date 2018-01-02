@@ -10,6 +10,10 @@
 
 namespace Ryd3 {
 
+Model::Model() {
+
+}
+
 Model::~Model() {
 	glDeleteBuffers(1, &vertexBuffer);
 	glDeleteBuffers(1, &uvBuffer);
