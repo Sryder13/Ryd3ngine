@@ -2,6 +2,10 @@
 
 namespace Ryd3 {
 
+Music::Music() {
+
+}
+
 Music::~Music() {
 	Mix_FreeMusic(data);
 }

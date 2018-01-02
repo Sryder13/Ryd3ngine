@@ -8,9 +8,9 @@ namespace Ryd3 {
 
 class Resource {
 	public:
-		Resource();
-		virtual ~Resource();
-		virtual bool load(const std::string &fileName);
+		Resource() {}
+		virtual ~Resource() {}
+		virtual bool load(const std::string &fileName) {}
 
 		std::string getFilename() {return this->filename;}
 		void setFilename(const std::string &filename) {this->filename = filename;}
@@ -42,7 +42,7 @@ class ResourceManager {
 		void ClearResources();
 
 	private:
-		ResourceManager();
+		ResourceManager() {}
 		ResourceManager(ResourceManager const&);
 		void operator=(ResourceManager const&);
 

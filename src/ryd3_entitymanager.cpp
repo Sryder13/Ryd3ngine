@@ -7,6 +7,14 @@
 
 namespace Ryd3 {
 
+EntityManager::EntityManager() {
+
+}
+
+EntityManager::~EntityManager() {
+	clearEntities();
+}
+
 void EntityManager::addEntity(Entity *entity) {
 	entityList.push_back(entity);
 }

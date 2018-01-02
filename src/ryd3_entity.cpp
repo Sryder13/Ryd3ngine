@@ -13,6 +13,14 @@ Entity::Entity(glm::vec3 position, glm::vec3 scale, glm::quat rotation) {
 	this->rotation = rotation;
 }
 
+Entity::~Entity() {
+
+}
+
+void Entity::update() {
+
+}
+
 void Entity::drawEntity(glm::mat4 viewMatrix, glm::mat4 projectionMatrix,
 	GLuint shaderProgram) {
 	if (model) {

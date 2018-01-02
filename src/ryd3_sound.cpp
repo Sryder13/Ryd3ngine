@@ -2,6 +2,10 @@
 
 namespace Ryd3 {
 
+Sound::Sound() {
+
+}
+
 Sound::~Sound() {
 	Mix_FreeChunk(data);
 }
