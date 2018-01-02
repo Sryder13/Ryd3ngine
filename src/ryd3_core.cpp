@@ -22,6 +22,7 @@ Core::Core(unsigned int windowWidth, unsigned int windowHeight) {
 
 Core::~Core() {
 	Mix_Quit();
+	Mix_CloseAudio();
 	IMG_Quit();
 	SDL_GL_DeleteContext(glContext);
 	SDL_DestroyWindow(mainWindow);
@@ -132,8 +133,11 @@ bool Core::initialiseImage() {
 
 bool Core::initialiseMixer(unsigned int numChannels) {
 	if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, numChannels, 4096) == -1) {
+		std::cerr << "SDL Mixer could not be initialised! SDL Error: "
+			<< Mix_GetError() << std::endl;
 		return false;
 	}
+	Mix_Init(MIX_INIT_OGG|MIX_INIT_MP3);
 	return true;
 }
 
