@@ -68,7 +68,7 @@ bool Core::playSound(const std::string &filename) {
 }
 
 bool Core::setupWindow() {
-	if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+	if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
 		std::cerr << "SDL could not be initialised! SDL Error: "
 			<< SDL_GetError() << std::endl;
 		return false;
