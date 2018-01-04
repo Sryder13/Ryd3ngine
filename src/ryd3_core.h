@@ -21,8 +21,8 @@ public:
 	void swapWindow();
 	void addEntity(Entity *entity);
 	void removeEntity(Entity *entity);
-	void drawEntities();
 	Camera &getCamera() {return this->camera;};
+	EntityManager &getEntityManager() {return this->entityManager;};
 	void playMusic(const std::string &filename, int loops);
 	void stopMusic();
 	bool playSound(const std::string &filename);
