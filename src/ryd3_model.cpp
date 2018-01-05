@@ -93,8 +93,8 @@ void Model::setupArrayObject() {
 		&normals[0], GL_STATIC_DRAW);
 
 	glGenBuffers(1, &indicesBuffer);
-	glBindBuffer(GL_ARRAY_BUFFER, indicesBuffer);
-	glBufferData(GL_ARRAY_BUFFER, indices.size() * sizeof(unsigned short),
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indicesBuffer);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned short),
 		&indices[0], GL_STATIC_DRAW);
 }
 
