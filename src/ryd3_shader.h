@@ -16,7 +16,7 @@ class Shader {
 		void createAndLink();
 		void registerAttribute(const std::string &attribute);
 		void registerUniform(const std::string &uniform);
-		GLuint getProgramID();
+		GLuint getProgramID() {return this->shaderProgram;}
 		GLuint getAttribLocation(const std::string &attrib);
 		GLuint getUniformLocation(const std::string &uniform);
 		void bind();
