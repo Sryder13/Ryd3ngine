@@ -19,7 +19,7 @@ class Model : public Resource {
 		Model();
 		virtual ~Model();
 		virtual bool load(const std::string &filename);
-		void drawModel();
+		void drawModel(GLuint shaderProgram);
 	private:
 		void setupArrayObject();
 

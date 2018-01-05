@@ -37,7 +37,7 @@ void Entity::drawEntity(glm::mat4 viewMatrix, glm::mat4 projectionMatrix,
 
 		glUniformMatrix4fv(matrixLocation, 1, GL_FALSE, &mvpMatrix[0][0]);
 
-		model->drawModel();
+		model->drawModel(shaderProgram);
 	}
 }
 

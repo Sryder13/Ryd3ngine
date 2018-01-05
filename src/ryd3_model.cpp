@@ -98,29 +98,33 @@ void Model::setupArrayObject() {
 		&indices[0], GL_STATIC_DRAW);
 }
 
-void Model::drawModel() {
+void Model::drawModel(GLuint shaderProgram) {
 	glActiveTexture(GL_TEXTURE0);
 	texture->bindTexture();
 
-	glEnableVertexAttribArray(0);
+	GLuint vertexLoc = glGetAttribLocation(shaderProgram, "ryd3_vertexPosition");
+	GLuint uvLoc = glGetAttribLocation(shaderProgram, "ryd3_vertexUv");
+	GLuint normalLoc = glGetAttribLocation(shaderProgram, "ryd3_vertexNormal");
+
+	glEnableVertexAttribArray(vertexLoc);
 	glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
+	glVertexAttribPointer(vertexLoc, 3, GL_FLOAT, GL_FALSE, 0, 0);
 
-	glEnableVertexAttribArray(1);
+	glEnableVertexAttribArray(uvLoc);
 	glBindBuffer(GL_ARRAY_BUFFER, uvBuffer);
-	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
+	glVertexAttribPointer(uvLoc, 2, GL_FLOAT, GL_FALSE, 0, 0);
 
-	glEnableVertexAttribArray(2);
+	glEnableVertexAttribArray(normalLoc);
 	glBindBuffer(GL_ARRAY_BUFFER, normalBuffer);
-	glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 0, 0);
+	glVertexAttribPointer(normalLoc, 3, GL_FLOAT, GL_FALSE, 0, 0);
 
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indicesBuffer);
 
 	glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_SHORT, 0);
 
-	glDisableVertexAttribArray(0);
-	glDisableVertexAttribArray(1);
-	glDisableVertexAttribArray(2);
+	glDisableVertexAttribArray(vertexLoc);
+	glDisableVertexAttribArray(uvLoc);
+	glDisableVertexAttribArray(normalLoc);
 }
 
 }
