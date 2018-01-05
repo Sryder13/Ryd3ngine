@@ -20,8 +20,8 @@ class Camera {
 
 		glm::vec3 getPosition() {return this->position;};
 		void setPosition(glm::vec3 newPosition) {this->position = newPosition;};
-		glm::vec3 getlookAt() {return this->lookAt;};
-		void setRotation(glm::vec3 newLookAt) {this->lookAt = newLookAt;};
+		glm::vec3 getLookAt() {return this->lookAt;};
+		void setLookAt(glm::vec3 newLookAt) {this->lookAt = newLookAt;};
 		float getFieldOfView() {return this->fieldOfView;};
 		void setFieldOfView(float newFieldOfView) {this->fieldOfView = newFieldOfView;};
 	private:
