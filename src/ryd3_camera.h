@@ -9,7 +9,7 @@ namespace Ryd3 {
 
 class Camera {
 	public:
-		Camera() : Camera(glm::vec3(0.0, 0.0, 1.0), glm::vec3(0.0), 90.0f, 640,
+		Camera() : Camera(glm::vec3(0.0f, 0.0f, 1.0f), glm::vec3(0.0f), 90.0f, 640,
 			480, 0.1f, 100.0f) {};
 		Camera(glm::vec3 position, glm::vec3 lookAt, float fieldOfView,
 			unsigned int viewportWidth, unsigned int viewportHeight,

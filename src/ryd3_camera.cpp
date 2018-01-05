@@ -21,7 +21,7 @@ Camera::~Camera() {
 }
 
 glm::mat4 Camera::getViewMatrix() {
-	return glm::lookAt(position, lookAt, glm::vec3(0.0, 1.0,0.0));
+	return glm::lookAt(position, lookAt, glm::vec3(0.0f, 1.0f, 0.0f));
 }
 
 glm::mat4 Camera::getProjectionMatrix() {

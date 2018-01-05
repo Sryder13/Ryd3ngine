@@ -24,9 +24,9 @@ void Entity::update() {
 void Entity::drawEntity(glm::mat4 viewMatrix, glm::mat4 projectionMatrix,
 	GLuint shaderProgram) {
 	if (model) {
-		glm::mat4 positionMatrix = glm::translate(glm::mat4(), position);
+		glm::mat4 positionMatrix = glm::translate(glm::mat4(1.0f), position);
 		glm::mat4 rotationMatrix = glm::mat4_cast(rotation);
-		glm::mat4 scaleMatrix = glm::scale(glm::mat4(), scale);
+		glm::mat4 scaleMatrix = glm::scale(glm::mat4(1.0f), scale);
 
 		glm::mat4 modelMatrix = positionMatrix * rotationMatrix * scaleMatrix;
 
