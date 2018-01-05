@@ -17,9 +17,9 @@ bool Texture::load(const std::string &filename) {
 	} else {
 		GLuint imageMode;
 
-		if (surface->format->BitsPerPixel == 3) {
+		if (surface->format->BytesPerPixel == 3) {
 			imageMode = GL_RGB;
-		} else if (surface->format->BitsPerPixel == 4) {
+		} else if (surface->format->BytesPerPixel == 4) {
 			imageMode = GL_RGBA;
 		} else {
 			std::cerr << "Image wrong format: " << filename << std::endl;
