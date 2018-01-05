@@ -61,7 +61,10 @@ bool Model::load(const std::string &filename) {
 		aiString path;
 
 		if (material->GetTexture(aiTextureType_DIFFUSE, 0, &path) == AI_SUCCESS) {
-			std::string finalPath = path.data;
+			std::string finalPath = filename;
+			std::size_t found = finalPath.find_last_of("/\\");
+			finalPath = finalPath.substr(0, found);
+			finalPath = finalPath + "/" + path.data;
 			texture = ResourceManager::getResourceManager()->getResource<Texture>(finalPath);
 			break; // I'm assuming each model will have one texture right now
 		}
