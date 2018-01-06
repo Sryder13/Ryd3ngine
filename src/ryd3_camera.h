@@ -24,6 +24,10 @@ class Camera {
 		void setLookAt(glm::vec3 newLookAt) {this->lookAt = newLookAt;};
 		float getFieldOfView() {return this->fieldOfView;};
 		void setFieldOfView(float newFieldOfView) {this->fieldOfView = newFieldOfView;};
+		float getNZPlane() {return this->nZPlane;};
+		void setNZPlane(float newNZPlane) {this->nZPlane = newNZPlane;};
+		float getFZPlane() {return this->fZPlane;};
+		void setFZPlane(float newFZPlane) {this->fZPlane = newFZPlane;};
 	private:
 		glm::vec3 position;
 		glm::vec3 lookAt;
