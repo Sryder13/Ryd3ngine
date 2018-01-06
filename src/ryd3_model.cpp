@@ -44,7 +44,7 @@ bool Model::load(const std::string &filename) {
 			aiVector3D pos = mesh->mVertices[j];
 			aiVector3D uv = mesh->mTextureCoords[0][j];
 			aiVector3D normal = mesh->mNormals[j];
-			vertices.push_back(glm::vec3(pos.x, pos.y, pos.x));
+			vertices.push_back(glm::vec3(pos.x, pos.y, pos.z));
 			uvs.push_back(glm::vec2(uv.x, uv.y));
 			normals.push_back(glm::vec3(normal.x, normal.y, normal.z));
 		}
