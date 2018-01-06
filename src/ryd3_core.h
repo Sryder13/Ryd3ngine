@@ -22,7 +22,6 @@ public:
 	void addEntity(Entity *entity);
 	void removeEntity(Entity *entity);
 	Camera &getCamera() {return this->camera;};
-	EntityManager &getEntityManager() {return this->entityManager;};
 	void playMusic(const std::string &filename, int loops);
 	void stopMusic();
 	bool playSound(const std::string &filename);
@@ -37,7 +36,6 @@ private:
 	unsigned int windowHeight;
 	Music *curMusic;
 	Camera camera;
-	EntityManager entityManager;
 
 	bool setupWindow();
 	bool setupContext();

@@ -13,7 +13,7 @@ class Camera;
 
 class EntityManager {
 	public:
-		EntityManager();
+		static EntityManager *getEntityManager() {static EntityManager eManager; return &eManager;}
 		virtual ~EntityManager();
 		void addEntity(Entity *entity);
 		void removeEntity(Entity *entity);
@@ -21,6 +21,10 @@ class EntityManager {
 		void updateEntities();
 		void clearEntities();
 	private:
+		EntityManager() {}
+		EntityManager(EntityManager const&);
+		void operator=(EntityManager const&);
+
 		std::list<Entity *> entityList;
 };
 

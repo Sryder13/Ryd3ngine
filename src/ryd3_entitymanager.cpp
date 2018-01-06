@@ -7,10 +7,6 @@
 
 namespace Ryd3 {
 
-EntityManager::EntityManager() {
-
-}
-
 EntityManager::~EntityManager() {
 	clearEntities();
 }
