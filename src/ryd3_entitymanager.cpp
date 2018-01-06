@@ -37,6 +37,12 @@ void EntityManager::drawEntities(Camera &camera, GLuint shaderProgram) {
 	}
 }
 
+void EntityManager::updateEntities() {
+	for (std::list<Entity *>::iterator it = entityList.begin(); it != entityList.end(); it++) {
+		(*it)->update();
+	}
+}
+
 void EntityManager::clearEntities() {
 	for (std::list<Entity *>::iterator it = entityList.begin(); it != entityList.end(); it++) {
 		delete (*it);

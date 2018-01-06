@@ -18,6 +18,7 @@ class EntityManager {
 		void addEntity(Entity *entity);
 		void removeEntity(Entity *entity);
 		void drawEntities(Camera &camera, GLuint shaderProgram);
+		void updateEntities();
 		void clearEntities();
 	private:
 		std::list<Entity *> entityList;
