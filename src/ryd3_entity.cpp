@@ -17,7 +17,7 @@ Entity::~Entity() {
 
 }
 
-void Entity::update() {
+int Entity::update() {
 
 }
 

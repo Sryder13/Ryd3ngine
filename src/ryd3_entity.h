@@ -19,7 +19,7 @@ class Entity {
 		virtual ~Entity();
 		void drawEntity(glm::mat4 viewMatrix, glm::mat4 projectionMatrix,
 			GLuint shaderProgram);
-		virtual void update();
+		virtual int update();
 
 		Model getModel();
 		bool setModel(Model *model) {this->model = model;}
