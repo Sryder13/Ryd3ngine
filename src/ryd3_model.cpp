@@ -31,7 +31,7 @@ bool Model::load(const std::string &filename) {
 
 	if (!scene) {
 		std::cerr << "Unable to open model file: " << filename << std::endl
-			<< "Assimp error: " << importer.GetErrorString();
+			<< " Assimp error: " << importer.GetErrorString();
 		return false;
 	}
 

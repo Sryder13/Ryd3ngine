@@ -10,7 +10,7 @@ Texture::Texture() {
 bool Texture::load(const std::string &filename) {
 	SDL_Surface *surface = IMG_Load(filename.c_str());
 	if (surface == NULL) {
-		std::cerr << "Could not load image: " << filename << "SDL_Image error: "
+		std::cerr << "Could not load image: " << filename << " SDL_Image error: "
 			<< IMG_GetError() << std::endl;
 		glBindTexture(GL_TEXTURE_2D, 0);
 		return false;

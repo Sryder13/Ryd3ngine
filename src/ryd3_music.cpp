@@ -13,7 +13,7 @@ Music::~Music() {
 bool Music::load(const std::string &filename) {
 	Mix_LoadMUS(filename.c_str());
 	if (data == NULL) {
-		std::cerr << "Failed to load Music: " << filename << "SDL error:"
+		std::cerr << "Failed to load Music: " << filename << " SDL error:"
 			<< Mix_GetError() << std::endl;
 		return false;
 	}
