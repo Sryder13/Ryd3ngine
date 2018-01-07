@@ -21,7 +21,7 @@ class Entity {
 			GLuint shaderProgram);
 		virtual int update();
 
-		Model getModel();
+		Model *getModel() {return this->model;};
 		bool setModel(Model *model) {this->model = model;}
 		glm::vec3 getPosition() {return this->position;};
 		void setPosition(glm::vec3 newPosition) {this->position = newPosition;};
