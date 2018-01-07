@@ -1,6 +1,7 @@
 #ifndef RYD3_RESOURCEMANAGER_H
 #define RYD3_RESOURCEMANAGER_H
 
+#include <string>
 #include <iostream>
 #include <map>
 
@@ -10,7 +11,7 @@ class Resource {
 	public:
 		Resource() {}
 		virtual ~Resource() {}
-		virtual bool load(const std::string &fileName) {}
+		virtual bool load(const std::string &fileName) { return false; }
 
 		std::string getFilename() {return this->filename;}
 		void setFilename(const std::string &filename) {this->filename = filename;}

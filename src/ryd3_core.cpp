@@ -139,12 +139,12 @@ bool Core::initialiseMixer(unsigned int numChannels) {
 	}
 	int mixFlags = MIX_INIT_MP3|MIX_INIT_OGG;
 	int initialisedFlags = Mix_Init(mixFlags);
-	if (initialisedFlags&mixFlags != mixFlags) {
+	if ((initialisedFlags&mixFlags) != mixFlags) {
 		std::cerr << "Failed to initialise support for following music formats:" << std::endl;
-		if (initialisedFlags&MIX_INIT_MP3 == 0) {
+		if ((initialisedFlags&MIX_INIT_MP3) == 0) {
 			std::cerr << "MP3" << std::endl;
 		}
-		if (initialisedFlags&MIX_INIT_OGG == 0) {
+		if ((initialisedFlags&MIX_INIT_OGG) == 0) {
 			std::cerr << "OGG" << std::endl;
 		}
 		std::cerr << "SDL Error: " << Mix_GetError();

@@ -1,5 +1,7 @@
 #include "ryd3_ResourceManager.h"
 
+#include <string>
+
 namespace Ryd3 {
 
 void ResourceManager::ClearResources() {

@@ -1,5 +1,7 @@
 #include "ryd3_music.h"
 
+#include <string>
+
 namespace Ryd3 {
 
 Music::Music() {

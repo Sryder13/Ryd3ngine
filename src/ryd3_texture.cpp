@@ -1,6 +1,8 @@
 #include "ryd3_texture.h"
 #include "SDL2/SDL_image.h"
 
+#include <string>
+
 namespace Ryd3 {
 
 Texture::Texture() {

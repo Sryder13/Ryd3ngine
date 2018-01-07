@@ -1,5 +1,7 @@
 #include "ryd3_sound.h"
 
+#include <string>
+
 namespace Ryd3 {
 
 Sound::Sound() {

@@ -18,7 +18,7 @@ Entity::~Entity() {
 }
 
 int Entity::update() {
-
+	return 1;
 }
 
 void Entity::drawEntity(glm::mat4 viewMatrix, glm::mat4 projectionMatrix,

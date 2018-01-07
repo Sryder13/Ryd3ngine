@@ -71,6 +71,7 @@ bool Model::load(const std::string &filename) {
 	}
 
 	setupArrayObject();
+	return true;
 }
 
 void Model::setupArrayObject() {

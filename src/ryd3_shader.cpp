@@ -1,5 +1,6 @@
 #include "ryd3_shader.h"
 
+#include <string>
 #include <fstream>
 
 namespace Ryd3 {
