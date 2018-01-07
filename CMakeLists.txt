@@ -3,6 +3,9 @@
 cmake_minimum_required(VERSION 3.7.2)
 project(Ryd3ngine)
 
+# Need some extra modules for SDL2 Image and SDL2 Mixer
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmakeModules/")
+
 # include libs
 include_directories(${CMAKE_SOURCE_DIR}/libs)
 
