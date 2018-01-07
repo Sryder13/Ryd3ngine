@@ -19,8 +19,6 @@ public:
 	virtual ~Core();
 	bool initialise(unsigned int numSoundChannels);
 	void swapWindow();
-	void addEntity(Entity *entity);
-	void removeEntity(Entity *entity);
 	Camera &getCamera() {return this->camera;};
 	void playMusic(const std::string &filename, int loops);
 	void stopMusic();
