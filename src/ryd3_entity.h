@@ -22,7 +22,7 @@ class Entity {
 		virtual int update();
 
 		Model *getModel() {return this->model;};
-		bool setModel(Model *model) {this->model = model;}
+		void setModel(Model *model) {this->model = model;}
 		glm::vec3 getPosition() {return this->position;};
 		void setPosition(glm::vec3 newPosition) {this->position = newPosition;};
 		glm::vec3 getScale() {return this->scale;};
