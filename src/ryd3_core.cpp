@@ -21,7 +21,9 @@ Core::Core(unsigned int windowWidth, unsigned int windowHeight) {
 }
 
 Core::~Core() {
-	Mix_Quit();
+	while (Mix_Init(0)) {
+		Mix_Quit();
+	}
 	Mix_CloseAudio();
 	IMG_Quit();
 	SDL_GL_DeleteContext(glContext);
